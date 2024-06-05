@@ -1,0 +1,122 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #001b3e;
+}
+
+#body-all {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+header {
+    display: flex;
+    margin-bottom: auto;
+    width: 100vw;
+    min-width: 50vw;
+    height: 7%;
+    text-align: center;
+    top: 0;
+}
+
+.header-background{
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    min-width: 50vw;
+    background-color: #01132b;
+    border-bottom: 3px solid #ffffff;
+    justify-content: space-between;
+}
+
+.head-separator {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    gap: 2%;
+}
+
+.head-separator h1{
+    color: rgb(223, 223, 223);
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.botao-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 10%;
+}
+
+.botao_login {
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botao_login:hover {
+    background-color: #0056b3;
+}
+
+.logo{
+    height: 70px;
+    width: 65px;
+}
+
+
+.home-background {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 85%;
+    background-color: #01132b;
+}
+
+.Menu {
+    display: flex;
+    margin: 15px;
+    gap: 10px;
+}
+
+.Menu .botao_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6%;
+    height: 35px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Menu .botao_menu:hover {
+    background-color: #0056b3;
+}
+
+
+footer {
+    color: rgb(204, 204, 204);
+    margin-top: auto;
+    padding: 10px;
+    text-align: center;
+    bottom: 0;
+}
