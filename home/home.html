@@ -7,58 +7,94 @@
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <div id="body-all">
-        <header>
-            <div class="header-background">
-                <div class="head-separator">
-                    <div class="logo">
-                        <img class="logo" src="../SGU.png" alt="">
-                    </div>
-                    <h1>SGU - Sistema de Gerenciamento Universitário</h1>
-                </div>
-               <div class="botao-separator">
-                   <button class = "botao_login" type="submit">SAIR</button>
-               </div>
-            </div>
-        </header>
-    
-        <div class="home-background">
-            <div class="content">
-                <div class="Menu">
-                    <button class = "botao_menu" type="submit">Turmas</button>
-                    <button class = "botao_menu" type="submit">Notas</button>
-                    <button class = "botao_menu" type="submit">Frequências</button>
-                </div>
-                <div class="noticias">
-                    <div class="noticias-background">
-                        <h1>Notícias:</h1>
-                        <p>Atualize seus dados para se manter totalmente integrado à plataforma do SGU. Acompanhe todas as nóticias para se manter informado! </p>
-                        <p>Não haverá aula nos dias 07/06/2024 e 08/06/2024 </p>
-                    </div>
-                </div>
-            </div>
-            <div class="perfil">
-                <div class="perfil-imagem">
-                    <img class = "img-perfil"src="perfil.png" alt="">
-                </div>
-               <div class="text-informs">
-                    <span>Nome: <p> Doutor Adler;</p></span>
-                    <span>CPF: <p> 151.523.857-10;</p></span>
-                    <span>Carteira de Trabalho: <p> 45863247;</p></span>
-                    <span>Endereço: <p> Rua Rui Barbosa;</p></span>
-                    <span>Contato: <p> (35) 9 9401-2519;</p></span>
-                    <span>Título: <p> Doutor, Mestre e PHD;</p></span>
-                    <span>Especialização: <p> Engenharia de Software 1;</p></span>
-               </div>
-            </div>
+
+    <header>
+        <div class="box1-imagem">
+            <img src="../SGU.png" alt="">
+            <p>Sistema de Gerenciamento Universitário</p>
         </div>
-       
-    
-        <footer>
-            Todos os direitos reservados | Engenharia de Software 1 | Copyright © 2024-2024 | UNIFEI 
-        </footer>
-    </div>
-    
+
+        <div class="box2-imagem">
+            <button class = "botao-login" type="submit"><p class="text-bottom">CONTA</p></button>
+            <button class = "botao-login" type="submit"><p class="text-bottom">SAIR</p></button>
+           
+        </div>
+
+    </header>
+
+    <main>
+        <div class="home-background">
+            <div class="home-all">
+                <div class="home-menu">
+                    <button class = "botao-login" type="submit"><p class="text-bottom">Cursos</p></button>
+                    <button class = "botao-login" type="submit"><p class="text-bottom">Disciplinas</p></button>
+                    <button class = "botao-login" type="submit"><p class="text-bottom">Turmas</p></button>
+                    <button class = "botao-login" type="submit"><p class="text-bottom">Admin</p></button>
+                    <button class = "botao-login" type="submit"><p class="text-bottom">Professores</p></button>
+                    <button class = "botao-login" type="submit"><p class="text-bottom">Alunos</p></button>
+                    <button class = "botao-login" type="submit"><p class="text-bottom">Usuários</p></button>
+                    <button class = "botao-login" type="submit"><p class="text-bottom">Calendário</p></button>
+                </div>
+                <div class="home-dashboard">
+                    <div class="home-box">
+                        <div class="box-dashboard">
+                            <div class="titulo">
+                                <h1>CURSOS</h1>
+                            </div>
+                            <div class="turmas">
+                                <div class="turma-name"><p>XDES04 - Engenharia de Software 1</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>CRSC02 - Sistemas Operacionais</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>CTCO02 - Algoritmos e Estrutura de Dados II</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>MAT00A - Cálculo A</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>MAT00B - Cálculo B</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>XDES01 - Fundamentos de Programação</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>XMAC01 - Matemática Discreta</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>CDES05 - Programação Lógica e Funcional</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>CMAC04 - Modelagem Computacional</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>CRSC03 - Arquitetura de Computadores I</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>CRSC04 - Arquitetura de Computadores II</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>XDES02 - Programação Orientada a Objetos</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>CMAC03 - Algoritmo em Grafo</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>CRSC03 - Arquitetura de Computadores I</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>CRSC04 - Arquitetura de Computadores II</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                                <div class="turma-name"><p>XDES02 - Programação Orientada a Objetos</p> <button class = "botao-consulta" type="submit"><p class="text-bottom">X</p></button> </div>
+                            </div>
+                        </div>
+                        <div class="box-dashboard">
+                            
+                        </div>
+                    </div>
+                         
+                    <div class="home-box">
+                        <div class="box-dashboard">
+                            
+                        </div>
+                        <div class="box-dashboard">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-perfil">
+                <div class="perfil-background">
+                    <div class="foto-perfil">
+                        <div class="foto-background">
+                            <img src="perfil.png" alt="">
+                        </div>
+                    </div>
+                    <div class="perfil-infos">
+                        <span>Nome:<p>ADSADA</p></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservados | Engenharia de Software 1 | Copyright © 2024-2024 | UNIFEI</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

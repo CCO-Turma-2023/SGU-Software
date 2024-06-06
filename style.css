@@ -1,24 +1,19 @@
 body, html {
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    width: 100%;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
     align-items: center;
     background-color: #001b3e;
 }
-
 
 
 label {
     display: block;
     margin: 10px 0 5px;
 }
-
-
-
-
-
 
 
 .Interface-Login {
@@ -103,17 +98,39 @@ label {
     padding: 10px;
 }
 
-footer {
-    color: rgb(204, 204, 204);
-    margin-top: auto;
-    padding: 10px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #001b3e;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+footer {
+    background-color: #333; /* Cor de fundo */
+    width: 100%;
+    min-height: 30px;
+    text-align: center;
+    padding: 10px 20px; /* Padding para espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    flex-shrink: 0; /* Impede o rodapé de encolher */
+}
 
+footer p {
+    color: rgb(204, 204, 204); /* Cor do texto */
+    margin: 0; /* Remove a margem padrão do parágrafo */
+    font-size: 14px; /* Tamanho da fonte */
+}
 
+/* Media queries para responsividade */
+@media (max-width: 600px) {
+    footer p {
+        font-size: 12px; /* Tamanho menor da fonte em telas pequenas */
+        padding: 5px; /* Padding reduzido */
+    }
+}
 
 /* modal */
 

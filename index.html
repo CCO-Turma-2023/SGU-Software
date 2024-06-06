@@ -7,50 +7,54 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="Interface-Login">
-        <div class="logo">
-            <img class="logo" src="SGU.png" alt="">
-        </div>
-        <div class="container">
-            <form id="login-form">
-                <div class="users">
-                    <label class="text_login" for="username">Usuário</label>
-                    <input type="text" id="username" name="username" required>
-                    <label class="text_login" for="password">Senha</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="opcoes_login">
-                    <button class = "botao_login" type="submit">Entrar</button>
-                    <button class = "botao_login"type="button" id="create-account">Criar Conta</button>
-                </div>
-            </form>
-        </div>
-    
-        <div class="modal" id="modal">
-            <div class="modal-content">
-                <div class="modal-separator">
-                    <span class="close">&times;</span>
-                </div>
-                <div class="logo">
-                    <img class="logo" src="SGU.png" alt="">
-                </div>
-                <form id="create-account-form">
-                    <div class = "users">
-                        <label class="text_login" for="new-username">CPF</label>
-                        <input type="text" id="new-username" name="new-username" required>
+    <main>
+        <div class="Interface-Login">
+            <div class="logo">
+                <img class="logo" src="SGU.png" alt="">
+            </div>
+            <div class="container">
+                <form id="login-form">
+                    <div class="users">
+                        <label class="text_login" for="username">Usuário</label>
+                        <input type="text" id="username" name="username" required>
+                        <label class="text_login" for="password">Senha</label>
+                        <input type="password" id="password" name="password" required>
                     </div>
-                    <div class = "users">
-                        <label class="text_login" for="new-password">Criar Senha</label>
-                        <input type="password" id="new-password" name="new-password" required>
+                    <div class="opcoes_login">
+                        <button class="botao_login" type="submit">Entrar</button>
+                        <button class="botao_login" type="button" id="create-account">Criar Conta</button>
                     </div>
-                    <button class="botao_login" type="submit">Criar Conta</button>
                 </form>
             </div>
+        
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <div class="modal-separator">
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="logo">
+                        <img class="logo" src="SGU.png" alt="">
+                    </div>
+                    <form id="create-account-form">
+                        <div class="users">
+                            <label class="text_login" for="new-username">CPF</label>
+                            <input type="text" id="new-username" name="new-username" required>
+                        </div>
+                        <div class="users">
+                            <label class="text_login" for="new-password">Criar Senha</label>
+                            <input type="password" id="new-password" name="new-password" required>
+                        </div>
+                        <button class="botao_login" type="submit">Criar Conta</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
 
     <footer>
-        Todos os direitos reservados | Engenharia de Software 1 | Copyright © 2024-2024 | UNIFEI 
+        <p>
+            Todos os direitos reservados | Engenharia de Software 1 | Copyright © 2024-2024 | UNIFEI 
+        </p>
     </footer>
 
     <script src="script.js"></script>
