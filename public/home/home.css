@@ -166,7 +166,7 @@ main {
     justify-content: center;
     width: 20px;
     height: 20px;
-    background-color: #007bff;
+    background-color: #ffffff;
     color: white;
     font-size: 1rem;
     border: none;
@@ -174,8 +174,13 @@ main {
     cursor: pointer;
 }
 
+.botao-consulta i{
+
+    color: rgb(0, 0, 0);
+}
+
 .botao-consulta:hover {
-    background-color: #0056b3;
+    background-color: #a7a7a7;
 }
 
 .home-perfil{

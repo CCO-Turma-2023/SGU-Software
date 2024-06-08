@@ -24,7 +24,7 @@ doc.getElementById('login-form').addEventListener('submit', function(event) {
     // Verifica se o usuário e senha correspondem a uma entrada válida na lista
     if (checkUser(username, password)) {
         alert('Login bem-sucedido');
-        window.location.href = 'home/home.html';
+        window.location.href = 'home/';
     } else {
         alert('Usuário ou senha incorretos');
     }
