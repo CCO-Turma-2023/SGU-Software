@@ -1,39 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body, html {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #001b3e;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
 }
-
 
 /* Header */
 header {
     display: flex;
-    flex: 0.1;
+    justify-content: space-between;
     background-color: #01132b;
-    border-bottom: 0.2vw solid white;
+    border-bottom: 4px solid white;
 }
 
 .box1-imagem {
     display: flex;
     align-items: center;
-    gap: 1vw;
-    flex: 0.5;
+    gap: 1;
 }
 
 .box1-imagem img{
-    width: 5vw;
-    height: 5vw;
+    width: 64px;
+    height: auto;
 }
 
 .box1-imagem p {
-    font-size: 1.3vw;
+    font-size: 1rem;
     color: white;
 }
 
@@ -41,21 +41,20 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    flex: 0.5;
 }
 
 .botao-login {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1vw;
-    width: 5vw;
-    height: 2vw;
     background-color: #007bff;
+    margin: 16px;
+    width: 108px;
+    height: 36px;
     color: white;
-    font-size: 0.8vw;
+    font-size: 1rem;
+    border-radius: 4px;
     border: none;
-    border-radius: 0.2vw;
     cursor: pointer;
 }
 
@@ -68,14 +67,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0.9;
+    padding: 18px;
+    flex: 1;
 }
 
 .home-background {
     display: flex;
-    width: 90%;
-    height: 90%;
-    background-color: #01132b;
+    width: 100%;
+    height: 100%;
+
 }
 
 .home-all{
@@ -83,13 +83,14 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     flex: 1;
 }
 
 
 .home-menu {
     display: flex;
-    flex: 0.3;
+    width: 100%;
 }
 
 .home-dashboard {
@@ -97,59 +98,51 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 2;
-    gap: 1vw;
-    margin-bottom: 1vw;
+    flex: 1;
 }
 
 .home-box {
-    display: flex;
-    justify-content: center;
-    gap: 1vw;
-    flex: 0.5;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr 1fr;
 }
 
 .box-dashboard{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 0.5vw solid #000;
-    width: 30vw;
-    height: 15vw;
-    flex: 0.45;
+    border: 2px solid #000;
+    border-radius: 12px;
+    width: 600px;
+    height: 300px;
 }
 
 .titulo{
     display: flex;
     justify-content: center;
-    flex: 0.1;
-}
-
-.titulo h1{
-    font-size: 1.0vw;
+    font-size: 0.7rem;
     color: #007bff;
 }
 
 .turmas {
     display: flex;
     flex-direction: column;
-    flex: 0.9;
-    gap: 0.8vw;
+    gap: 8px;
     overflow-y: auto;
 }
 
 .turmas::-webkit-scrollbar {
-    width: 0.5vw; /* Largura do scrollbar */
+    width: 8px; /* Largura do scrollbar */
 }
 
 .turmas::-webkit-scrollbar-track {
     background: #f1f1f1; /* Cor do fundo do track do scrollbar */
-    border-radius: 1vw; /* Bordas arredondadas */
+    border-radius: 12px; /* Bordas arredondadas */
 }
 
 .turmas::-webkit-scrollbar-thumb {
     background: #007bff; /* Cor do thumb do scrollbar */
-    border-radius: 1vw; /* Bordas arredondadas */
+    border-radius: 12px; /* Bordas arredondadas */
 }
 
 .turmas::-webkit-scrollbar-thumb:hover {
@@ -160,12 +153,12 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1vw;
+    margin: 0 12px;
 }
 
 .turma-name p{
     color: white;
-    font-size: 0.8vw;
+    font-size: 1rem;
     margin: 0;
 }
 
@@ -173,13 +166,13 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 20px;
+    height: 20px;
     background-color: #007bff;
     color: white;
-    font-size: 0.8vw;
+    font-size: 1rem;
     border: none;
-    border-radius: 0.2vw;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -191,7 +184,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0.4;
+    width: 400px;
 }
 
 .perfil-background{
@@ -199,47 +192,40 @@ main {
     flex-direction: column;
     width: 90%;
     height: 90%;
-    background-color: #001b3e;
 }
 
 .foto-perfil{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0.3;
+    margin-bottom: 12px;
 }
 
-.foto-background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vw;
-    width: 10vw;
-    border: 0.3vw solid #000;
-}
 
 .foto-background img{
-    height: 9vw;
-    width: 9vw;
+    height: 144px;
+    width: 144px;
+    padding: 12px;
+    border: 4px solid #000;
+    border-radius: 12px;
 }
 
 .perfil-infos {
     display: flex;
     align-items: center;
-    flex: 0.7;
 }
 
 .perfil-infos span {
     display: flex;
     align-items: center;
-    margin-left: 1vw;
-    font-size: 1vw;
-    gap: 1vw;
+    margin-left: 12px;
+    font-size: 1rem;
+    gap: 12px;
     color: white;
 }
 
 .perfil-infos p {
-    font-size: 1vw;
+    font-size: 1rem;
     color: #007bff;
 }
 
@@ -249,11 +235,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0.04;
+    padding: 12px 0;
     background-color: #333; /* Cor de fundo */
 }
 
 footer p {
-    font-size: 0.7vw;
+    font-size: 1rem;
     color: white;
 }
