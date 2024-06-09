@@ -17,7 +17,7 @@
         </div>
 
         <div class="box2-imagem">
-            <button class="botao-login" type="submit"><p class="text-bottom">VOLTAR</p></button>  
+            <button class="botao-login" id="voltar" type="submit"><p class="text-bottom">VOLTAR</p></button>  
         </div>
     </header>
 
@@ -73,7 +73,7 @@
                         <span>Permissão: <p id="infoPermissao"></p></span>
                     </div>
                     <div class="perfil-options">
-                        <button type="button" class="botao-login editar" data-toggle="modal" data-target="#formModal">
+                        <button type="button" class="botao-login editar" data-toggle="modal" >
                             <p class="text-bottom">EDITAR</p>
                         </button>
                         <button class="botao-login" type="button"><p class="text-bottom">EXCLUIR</p></button>  
@@ -128,7 +128,7 @@
                                     <option value="viewer">Viewer</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" id="passwordContainer">
                                 <label for="password">Senha</label>
                                 <input type="password" class="form-control" id="password" required>
                             </div>
