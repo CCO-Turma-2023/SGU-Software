@@ -15,4 +15,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 document.getElementById('admin').addEventListener('click', function(event) {
     // Redireciona para a página desejada
     window.location.href = '../admin/';
-  });
+});
+
+document.getElementById('sair').addEventListener('click', function(event) {
+    // Redireciona para a página desejada
+    window.location.href = '../';
+});
