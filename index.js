@@ -75,6 +75,10 @@ app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'home', 'home.html'));
 });
 
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'admin', 'admin.html'));
+});
+
 // Iniciar o servidor
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
