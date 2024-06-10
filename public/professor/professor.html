@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário em Modal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="professor.css">
+</head>
+<body>
+
+    <header>
+        <div class="box1-imagem">
+            <img src="../SGU.png" alt="">
+            <p>Sistema de Gerenciamento Universitário</p>
+        </div>
+
+        <div class="box2-imagem">
+            <button class="botao-login" id="voltar" type="submit"><p class="text-bottom">VOLTAR</p></button>  
+        </div>
+    </header>
+
+    <main>
+        <!-- Botão para abrir o modal -->
+        <div class="box-allAdmins">
+            <div class="titulo">
+                <h1>PROFESSORES</h1>
+            </div>
+            <div class="box-dashboard">
+                <div class="turmas">
+                    <div class="turma-name">
+                        <p>Maria Silva</p>
+                        <button class="botao-consulta" type="button" data-name="Maria Silva" data-cpf="12345678901" data-endereco="Rua A, 123" data-email="maria@exemplo.com" data-contato="11999999999" data-carteira="CT123" data-titulacao="Doutorado" data-especializacao="Gestão">
+                            <p class="text-bottom"><i class="fa-solid fa-magnifying-glass"></i></p>
+                        </button>
+                    </div>
+                    <!-- Repetir para os outros administradores -->
+                    <div class="turma-name">
+                        <p>João Pereira</p>
+                        <button class="botao-consulta" type="button" data-name="João Pereira" data-cpf="12345678902" data-endereco="Rua B, 456" data-email="joao@exemplo.com" data-contato="11999999998" data-carteira="CT124" data-titulacao="Mestrado" data-especializacao="Engenharia">
+                            <p class="text-bottom"><i class="fa-solid fa-magnifying-glass"></i></p>
+                        </button>
+                    </div>
+                    <!-- Continue adicionando os demais -->
+                </div>
+                <div class="perfil-options">
+                    <button type="button" class="botao-login cadastrar" >
+                        <p class="text-bottom">CADASTRAR</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-allAdmins">
+            <div class="titulo">
+                <h1>INFORMAÇÕES</h1>
+            </div>
+            <div class="box-dashboard">
+                <div class="turmas">
+                    <div class="foto-perfil">
+                        <div class="foto-background">
+                            <img src="../home/perfil.png" alt="">
+                        </div>
+                    </div>
+                    <div class="perfil-infos">
+                        <span>Nome: <p id="infoNome"></p></span>
+                        <span>CPF: <p id="infoCpf"></p></span>
+                        <span>Endereço: <p id="infoEndereco"></p></span>
+                        <span>Email: <p id="infoEmail"></p></span>
+                        <span>Contato: <p id="infoContato"></p></span>
+                        <span>Carteira de Trabalho: <p id="infoCarteira"></p></span>
+                        <span>Titulação: <p id="infoTitulacao"></p></span>
+                        <span>Especialização: <p id="infoEspecializacao"></p></span>
+                    </div>
+                    <div class="perfil-options">
+                        <button type="button" class="botao-login editar" data-toggle="modal" >
+                            <p class="text-bottom">EDITAR</p>
+                        </button>
+                        <button class="botao-login delete" type="button"><p class="text-bottom">EXCLUIR</p></button>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="formModalLabel">Cadastro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="meuFormulario">
+                            <div id="forms-options">
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control" id="nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cpf">CPF</label>
+                                    <input type="text" class="form-control" id="cpf" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="endereco">Endereço</label>
+                                    <input type="text" class="form-control" id="endereco" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contato">Contato</label>
+                                    <input type="tel" class="form-control" id="contato" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="carteira">Carteira de Trabalho</label>
+                                    <input type="text" class="form-control" id="carteira" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="titulacao">Titulação</label>
+                                    <input type="text" class="form-control" id="titulacao" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="especializacao">Especialização</label>
+                                    <input type="text" class="form-control" id="especializacao" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">CADASTRAR</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Todos os direitos reservados | Engenharia de Software 1 | Copyright © 2024-2024 | UNIFEI</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
