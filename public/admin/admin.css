@@ -215,13 +215,9 @@ main {
 
 }
 
-.modal {
-    overflow: auto;
-}
 
 .modal-content {
     background-color: #f5f5f5;
-    overflow: auto;
     border-radius: 10px;
     padding: 20px;
 }
@@ -242,4 +238,18 @@ footer p {
 footer p {
     font-size: 1rem;
     color: white;
+}
+
+
+@media (max-height: 890px) {
+    .modal-content {
+        height: 800px;
+        overflow: auto;
+    }
+
+    .box-dashboard{
+        height: 500px;
+    }
+
+
 }

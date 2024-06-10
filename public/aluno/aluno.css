@@ -240,3 +240,16 @@ footer p {
     font-size: 1rem;
     color: white;
 }
+
+@media (max-height: 890px) {
+    .modal-content {
+        height: 800px;
+        overflow: auto;
+    }
+
+    .box-dashboard{
+        height: 500px;
+    }
+
+
+}
