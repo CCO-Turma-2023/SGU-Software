@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     let selectedAdmin = null;
 
-    document.getElementById('meuFormulario').addEventListener('submit', function (event) {
+    document.querySelector('.modal-body').addEventListener('submit', function (event) {
         event.preventDefault();
-
+        formModal.classList.remove('show');
+        formModal.style.display = 'none';
         const nome = document.getElementById('nome').value;
         const cpf = document.getElementById('cpf').value;
         const carteiraTrabalho = document.getElementById('carteiraTrabalho').value;
@@ -11,32 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const email = document.getElementById('email').value;
         const contato = document.getElementById('contato').value;
         const permissoes = Array.from(document.getElementById('permissao').selectedOptions).map(option => option.value).join(',');
-        if (selectedAdmin) {
-            // Atualizando o administrador existente
-            selectedAdmin.element.querySelector('p').textContent = nome;
-            const consultaButton = selectedAdmin.element.querySelector('.botao-consulta');
-            consultaButton.setAttribute('data-name', nome);
-            consultaButton.setAttribute('data-cpf', cpf);
-            consultaButton.setAttribute('data-carteira', carteiraTrabalho);
-            consultaButton.setAttribute('data-endereco', endereco);
-            consultaButton.setAttribute('data-email', email);
-            consultaButton.setAttribute('data-contato', contato);
-            consultaButton.setAttribute('data-permissao', permissoes);
 
-            // Atualizando os detalhes exibidos
-            document.getElementById('infoNome').textContent = nome;
-            document.getElementById('infoCpf').textContent = cpf;
-            document.getElementById('infoCarteira').textContent = carteiraTrabalho;
-            document.getElementById('infoEndereco').textContent = endereco;
-            document.getElementById('infoEmail').textContent = email;
-            document.getElementById('infoContato').textContent = contato;
-            document.getElementById('infoPermissao').textContent = permissoes;
-            // Revertendo o texto do botão para CADASTRAR
-            document.querySelector('#formModal .btn-primary').textContent = 'CADASTRAR';
-
-            // Limpa a seleção de administrador
-            selectedAdmin = null;
-        } else {
+        if (!selectedAdmin) {
             // Adicionando um novo administrador
             const senha = document.getElementById('password').value;
 
@@ -78,22 +55,65 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('infoEmail').textContent = email;
                 document.getElementById('infoContato').textContent = contato;
                 document.getElementById('infoPermissao').textContent = permissao;
-                
+
                 selectedAdmin = {
                     element: this.closest('.turma-name'),
                     name, cpf, carteira, endereco, email, contato, permissao
                 };
+
             });
+
+        } else {
+            // Editando um administrador existente
+            selectedAdmin.element.querySelector('p').textContent = nome;
+            const consultaButton = selectedAdmin.element.querySelector('.botao-consulta');
+            consultaButton.setAttribute('data-name', nome);
+            consultaButton.setAttribute('data-cpf', cpf);
+            consultaButton.setAttribute('data-carteira', carteiraTrabalho);
+            consultaButton.setAttribute('data-endereco', endereco);
+            consultaButton.setAttribute('data-email', email);
+            consultaButton.setAttribute('data-contato', contato);
+            consultaButton.setAttribute('data-permissao', permissoes);
+
+            document.getElementById('infoNome').textContent = nome;
+            document.getElementById('infoCpf').textContent = cpf;
+            document.getElementById('infoCarteira').textContent = carteiraTrabalho;
+            document.getElementById('infoEndereco').textContent = endereco;
+            document.getElementById('infoEmail').textContent = email;
+            document.getElementById('infoContato').textContent = contato;
+            document.getElementById('infoPermissao').textContent = permissoes;
+
+            // Limpa a seleção de administrador
+            selectedAdmin = null;
         }
+
         $('#formModal').modal('hide');
         clearForm();
     });
 
-    const consultaButtons = document.querySelectorAll('.botao-consulta');
-    const deleteButton = document.querySelector('.perfil-options .botao-login:nth-child(2)');
-    const editButton = document.querySelector('.editar');
 
-    consultaButtons.forEach(button => {
+    document.querySelector('.perfil-options .cadastrar').addEventListener('click', function () {
+        formModal.classList.add('show');
+        formModal.style.display = 'block';
+        const newPasswordContainer = document.getElementById('passwordContainer');
+        newPasswordContainer.id = 'passwordContainer';
+        newPasswordContainer.outerHTML = `
+        <div class="form-group" id="passwordcamp">
+            <label for="password">Senha</label>
+            <input type="password" class="form-control" id="password" required>
+        </div>
+           
+        `;
+        document.getElementById('meuFormulario').appendChild(newPasswordContainer);
+        clearForm();
+    });
+
+    document.querySelector('.close').addEventListener('click', function () {
+        formModal.classList.remove('show');
+        formModal.style.display = 'none';
+    });
+
+    document.querySelectorAll('.botao-consulta').forEach(button => {
         button.addEventListener('click', function () {
             const name = this.getAttribute('data-name');
             const cpf = this.getAttribute('data-cpf');
@@ -110,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('infoEmail').textContent = email;
             document.getElementById('infoContato').textContent = contato;
             document.getElementById('infoPermissao').textContent = permissao;
+
             selectedAdmin = {
                 element: this.closest('.turma-name'),
                 name, cpf, carteira, endereco, email, contato, permissao
@@ -117,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    deleteButton.addEventListener('click', function () {
+    document.querySelector('.perfil-options .delete').addEventListener('click', function () {
         if (selectedAdmin && confirm('Tem certeza que deseja excluir este administrador?')) {
             selectedAdmin.element.remove();
             clearInfo();
@@ -125,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    editButton.addEventListener('click', function () {
+    document.querySelector('.perfil-options .editar').addEventListener('click', function () {
         if (selectedAdmin) {
             const { name, cpf, carteira, endereco, email, contato, permissao } = selectedAdmin;
 
@@ -143,10 +164,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 option.selected = permissoesArray.includes(option.value);
             });
 
-            document.getElementById('passwordContainer').style.display = 'none'; // Oculta o campo de senha ao editar
+            const passwordContainer = document.getElementById('passwordcamp');
+            if (passwordContainer) {
+                passwordContainer.remove(); // Remove o campo de senha ao editar
+            }
 
-            // Muda o texto do botão para EDITAR
-            document.querySelector('#formModal .btn-primary').textContent = 'SALVAR';
+            const modalButton = document.querySelector('#formModal .btn-primary');
+            modalButton.textContent = 'SALVAR';
+            modalButton.classList.add('salvar');
 
             $('#formModal').modal('show');
         } else {
@@ -163,20 +188,15 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('infoContato').textContent = '';
         document.getElementById('infoPermissao').textContent = '';
     }
+
+    function clearForm() {
+        document.getElementById('meuFormulario').reset();
+        document.getElementById('permissao').selectedIndex = -1;
+        selectedAdmin = null;
+        document.querySelector('#formModal .btn-primary').textContent = 'CADASTRAR';
+    }
 });
 
-function clearForm() {
-    document.getElementById('meuFormulario').reset();
-    document.getElementById('permissao').selectedIndex = -1;
-    document.getElementById('passwordContainer').style.display = 'block'; // Exibe o campo de senha ao adicionar um novo administrador
-    selectedAdmin = null;
-
-    // Reverte o texto do botão para CADASTRAR
-    document.querySelector('#formModal .btn-primary').textContent = 'CADASTRAR';
-    console.log("Entrou no clearForm")
-}
-
 document.getElementById('voltar').addEventListener('click', function(event) {
-    // Redireciona para a página desejada
     window.location.href = '../home/';
 });
