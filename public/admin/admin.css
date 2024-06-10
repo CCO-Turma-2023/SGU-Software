@@ -215,10 +215,13 @@ main {
 
 }
 
-
+.modal {
+    overflow: auto;
+}
 
 .modal-content {
     background-color: #f5f5f5;
+    overflow: auto;
     border-radius: 10px;
     padding: 20px;
 }

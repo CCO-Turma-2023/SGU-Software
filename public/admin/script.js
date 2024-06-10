@@ -95,16 +95,20 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.perfil-options .cadastrar').addEventListener('click', function () {
         formModal.classList.add('show');
         formModal.style.display = 'block';
-        const newPasswordContainer = document.getElementById('passwordContainer');
-        newPasswordContainer.id = 'passwordContainer';
-        newPasswordContainer.outerHTML = `
-        <div class="form-group" id="passwordcamp">
-            <label for="password">Senha</label>
-            <input type="password" class="form-control" id="password" required>
-        </div>
-           
-        `;
+
+        if (!document.getElementById('passwordcamp'))  {
+            const newPasswordContainer = document.getElementById('passwordContainer');
+            newPasswordContainer.id = 'passwordContainer';
+            newPasswordContainer.outerHTML = `
+            <div class="form-group" id="passwordcamp">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            
+            `;
         document.getElementById('meuFormulario').appendChild(newPasswordContainer);
+        }
+        
         clearForm();
     });
 

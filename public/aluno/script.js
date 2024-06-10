@@ -93,6 +93,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('curso').value = curso;
         const modalButton = document.querySelector('#formModal .btn-primary');
         modalButton.textContent = 'SALVAR';
+        const passwordContainer = document.getElementById('passwordcamp');
+        if (passwordContainer) {
+            passwordContainer.remove(); // Remove o campo de senha ao editar
+        }
         $('#formModal').modal('show');
     });
 
@@ -110,10 +114,29 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('infoCurso').textContent = '';
     });
 
-    document.querySelector('.botao-login.cadastrar').addEventListener('click', function () {
-        selectedAdmin = null;
-        document.querySelector('.modal-body form').reset();
-        $('#formModal').modal('show');
+    document.querySelector('.perfil-options .cadastrar').addEventListener('click', function () {
+        formModal.classList.add('show');
+        formModal.style.display = 'block';
+
+        if (!document.getElementById('passwordcamp'))  {
+            const newPasswordContainer = document.getElementById('passwordContainer');
+            newPasswordContainer.id = 'passwordContainer';
+            newPasswordContainer.outerHTML = `
+            <div class="form-group" id="passwordcamp">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            
+            `;
+        document.getElementById('meuFormulario').appendChild(newPasswordContainer);
+        }
+        
+        clearForm();
+    });
+
+    document.querySelector('.close').addEventListener('click', function () {
+        formModal.classList.remove('show');
+        formModal.style.display = 'none';
     });
 
     document.getElementById('voltar').addEventListener('click', function () {
