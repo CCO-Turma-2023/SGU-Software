@@ -21,3 +21,13 @@ document.getElementById('sair').addEventListener('click', function(event) {
     // Redireciona para a página desejada
     window.location.href = '../';
 });
+
+document.getElementById('professor').addEventListener('click', function(event) {
+    // Redireciona para a página desejada
+    window.location.href = '../professor/';
+});
+
+document.getElementById('aluno').addEventListener('click', function(event) {
+    // Redireciona para a página desejada
+    window.location.href = '../aluno/';
+});
