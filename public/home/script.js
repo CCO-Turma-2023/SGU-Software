@@ -31,3 +31,8 @@ document.getElementById('aluno').addEventListener('click', function(event) {
     // Redireciona para a página desejada
     window.location.href = '../aluno/';
 });
+
+document.getElementById('disciplina').addEventListener('click', function(event) {
+    // Redireciona para a página desejada
+    window.location.href = '../disciplina/';
+});
