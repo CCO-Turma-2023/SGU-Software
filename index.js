@@ -87,6 +87,10 @@ app.get('/professor', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'professor', 'professor.html'));
 });
 
+app.get('/disciplina', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'disciplina', 'disciplina.html'));
+});
+
 // Iniciar o servidor
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
