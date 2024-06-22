@@ -189,31 +189,3 @@ main {
     font-size: 1rem;
     color: #007bff;
 }
-
-
-/* Footer */
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 0;
-    background-color: #333; /* Cor de fundo */
-}
-
-footer p {
-    font-size: 1rem;
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .foto-background img {
-        height: auto;
-        width: 100%;
-        max-width: 100px;  /* Ajustar conforme necessário */
-        max-height: 100px; /* Ajustar conforme necessário */
-    }
-
-    .home-perfil {
-        width: 100%;
-    }
-}
