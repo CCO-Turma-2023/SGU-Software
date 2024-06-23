@@ -1,0 +1,154 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100%;
+}
+
+.box1-imagem {
+    display: flex;
+    align-items: center;
+}
+
+.box1-imagem img{
+    width: 64px;
+    height: auto;
+}
+
+.box1-imagem p {
+    font-size: 1rem;
+    margin: 0;
+    color: white;
+}
+
+.box2-imagem {
+    display: flex;
+    
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.box2-imagem p {
+    margin: 0;
+}
+
+
+
+
+main {
+    flex: 1;;
+    padding: 20px;
+}
+
+.year-selector {
+    margin-bottom: 20px;
+}
+
+
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #01132b;
+    width: 1100px;
+    height: 700px;
+}
+
+.col-md-8 {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    gap: 10px;
+}
+
+/* .descricao{
+    width: 100%;
+} */
+
+
+.month-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#monthName {
+    margin: 0;
+}
+
+#calendar {
+    display: flex;
+    flex-direction: column;
+}
+
+.week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+}
+
+.days-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 800px;
+    width: 100%;
+}
+
+.day {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.day:hover {
+    background-color: #0056b3;
+}
+
+.event {
+    background-color: #ff0000;
+}
+
+#eventDescription {
+    height: 250px;
+}
+
+#eventInfo {
+    border: 1px solid #ccc;
+    width: 300px;
+    padding: 10px 0;
+}
+
+#eventDetails {
+    display: none;
+}
+
+#eventDetails.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background-color: #333; /* Cor de fundo */
+    width: 100%;
+    min-height: 30px;
+    text-align: center;
+    padding: 10px 20px; /* Padding para espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    flex-shrink: 0; /* Impede o rodapé de encolher */
+}
+
+footer p {
+    color: rgb(204, 204, 204); /* Cor do texto */
+    margin: 0; /* Remove a margem padrão do parágrafo */
+    font-size: 14px; /* Tamanho da fonte */
+}
