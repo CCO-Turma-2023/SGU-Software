@@ -91,6 +91,15 @@ app.get('/disciplina', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'disciplina', 'disciplina.html'));
 });
 
+app.get('/cursos', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'cursos', 'cursos.html'));
+});
+
+
+app.get('/calendario', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'calendario', 'calendario.html'));
+});
+
 // Iniciar o servidor
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
