@@ -36,3 +36,13 @@ document.getElementById('disciplina').addEventListener('click', function(event) 
     // Redireciona para a página desejada
     window.location.href = '../disciplina/';
 });
+
+document.getElementById('cursos').addEventListener('click', function(event) {
+    // Redireciona para a página desejada
+    window.location.href = '../cursos/';
+});
+
+document.getElementById('calendario').addEventListener('click', function(event) {
+    // Redireciona para a página desejada
+    window.location.href = '../calendario/';
+});
