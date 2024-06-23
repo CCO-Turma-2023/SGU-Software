@@ -1,0 +1,170 @@
+.box1-imagem {
+    display: flex;
+    align-items: center;
+}
+
+.box1-imagem img{
+    width: 64px;
+    height: auto;
+}
+
+.box1-imagem p {
+    font-size: 1rem;
+    margin: 0;
+    color: white;
+}
+
+.box2-imagem {
+    display: flex;
+    
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.botao-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    margin: 16px;
+    width: 108px;
+    height: 36px;
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.botao-login p{ 
+    margin: 0;
+}
+
+
+.botao-login:hover {
+    background-color: #0056b3;
+}
+
+main {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    padding: 18px;
+    flex: 1;
+}
+
+.box-allAdmins {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-dashboard{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    border: 2px solid #000;
+    border-radius: 12px;
+    width: 500px;
+    height: 700px;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #007bff;
+}
+
+.turmas {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+
+.turmas::-webkit-scrollbar {
+    width: 8px; /* Largura do scrollbar */
+}
+
+.turmas::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor do fundo do track do scrollbar */
+    border-radius: 12px; /* Bordas arredondadas */
+}
+
+.turmas::-webkit-scrollbar-thumb {
+    background: #007bff; /* Cor do thumb do scrollbar */
+    border-radius: 12px; /* Bordas arredondadas */
+}
+
+.turmas::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Cor do thumb do scrollbar ao passar o mouse */
+}
+
+.turma-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 12px;
+}
+
+.turma-name p{
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.foto-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+
+.foto-background img {
+    height: 144px;
+    width: 144px;
+    max-width: 144px;  /* Adicionado */
+    max-height: 144px; /* Adicionado */
+    padding: 12px;
+    border: 4px solid #000;
+    border-radius: 12px;
+    object-fit: cover; /* Garantir que a imagem se ajuste corretamente */
+}
+
+.perfil-infos {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+
+}
+
+.perfil-infos span {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    font-size: 1rem;
+    gap: 12px;
+    color: white;
+}
+
+.perfil-infos p {
+    font-size: 1rem;
+    margin: 0;
+    color: #007bff;
+}
+
+.perfil-options{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: self-end;
+
+}

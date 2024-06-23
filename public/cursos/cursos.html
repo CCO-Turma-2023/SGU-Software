@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário em Modal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="cursos.css">
+    <link rel="stylesheet" href="../styleGlobal.css">
+</head>
+<body>
+
+    <header>
+        <div class="box1-imagem">
+            <img src="../SGU.png" alt="">
+            <p>Sistema de Gerenciamento Universitário</p>
+        </div>
+
+        <div class="box2-imagem">
+            <button class="botao-login" id="voltar" type="submit"><p class="text-bottom">VOLTAR</p></button>  
+        </div>
+    </header>
+
+    <main>
+        <!-- Botão para abrir o modal -->
+        <div class="box-allAdmins">
+            <div class="titulo">
+                <h1>CURSOS</h1>
+            </div>
+            <div class="box-dashboard">
+                <div class="turmas">
+                    <div class="turma-name">
+                        <p>Ciência da Computação</p>
+                        <button class="botao-consulta" type="button" data-nome="Ciência da Computação" data-sigla="CCO" data-duracao="8" data-coordenador="Dr. Rafael Magalhães Dias Frinhani" data-grade="1° Semestre: XDES01 - Fundamentos de Programação, MAT00A - Cálculo A, XMAC01 - Matemática Discreta, CRSC03 - Arquitetura de Computadores I">
+                            <p class="text-bottom"><i class="fa-solid fa-magnifying-glass"></i></p>
+                        </button>
+                    </div>
+                    <!-- Repetir para outras disciplinas -->
+                    <div class="turma-name">
+                        <p>Engenharia da Computação</p>
+                        <button class="botao-consulta" type="button" data-nome="Engenharia da Computação" data-sigla="ECO" data-duracao="10" data-coordenador="Dr. João Paulo Reus Rodrigues Leite" data-grade="1° Semestre: MAT00A - Cálculo A, ECO101A - Introdução à Engenharia da Computação, ECOM00 - Lógica pra Engenharia">
+                            <p class="text-bottom"><i class="fa-solid fa-magnifying-glass"></i></p>
+                        </button>
+                    </div>
+                    <!-- Continue adicionando os demais -->
+                    <div class="turma-name">
+                        <p>Sistemas de Informação</p>
+                        <button class="botao-consulta" type="button" data-nome="Sistemas de Informação" data-sigla="SIN" data-duracao="9" data-coordenador="Dr. Luiz Olmes Carvalho" data-grade="1° Semestre: MAT00A - Cálculo A, XDES01 - Fundamentos de Programação, SAHC05 - Fundamentos de Sistemas de Informação">
+                            <p class="text-bottom"><i class="fa-solid fa-magnifying-glass"></i></p>
+                        </button>
+                    </div>
+                </div>
+                <div class="perfil-options">
+                    <button type="button" class="botao-login cadastrar" >
+                        <p class="text-bottom">CADASTRAR</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-allAdmins">
+            <div class="titulo">
+                <h1>INFORMAÇÕES</h1>
+            </div>
+            <div class="box-dashboard">
+                <div class="turmas">
+                    <div class="foto-perfil">
+                        <div class="foto-background">
+                            <img src="../home/perfil.png" alt="">
+                        </div>
+                    </div>
+                    <div class="perfil-infos">
+                        <span>Nome: <p id="infoNome"></p></span>
+                        <span>Sigla: <p id="infoSigla"></p></span>
+                        <span>Semestres para conclusão (mínimo): <p id="infoDuracao"></p></span>
+                        <span>Coordenador: <p id="infoCoordenador"></p></span>
+                        <span>Grade: <p id="infoGrade"></p></span>
+                    </div>
+                    <div class="perfil-options">
+                        <button type="button" class="botao-login editar" data-toggle="modal" >
+                            <p class="text-bottom">EDITAR</p>
+                        </button>
+                        <button class="botao-login delete" type="button"><p class="text-bottom">EXCLUIR</p></button>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="formModalLabel">Cadastro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="meuFormulario">
+                            <div id="forms-options">
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control" id="nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sigla">Sigla</label>
+                                    <input type="text" class="form-control" id="sigla" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="duracao">Duração</label>
+                                    <div>
+                                        <button type="button" class="btn btn-outline-primary" data-duracao="8">8 semestres</button>
+                                        <button type="button" class="btn btn-outline-primary" data-duracao="9">9 semestres</button>
+                                        <button type="button" class="btn btn-outline-primary" data-duracao="10">10 semestres</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="coordenador">Coordenador</label>
+                                    <input type="text" class="form-control" id="coordenador" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="grade">Grade</label>
+                                    <input type="text" class="form-control" id="grade" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">CADASTRAR</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Todos os direitos reservados | Engenharia de Software 1 | Copyright © 2024-2024 | UNIFEI</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
